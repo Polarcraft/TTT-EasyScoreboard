@@ -204,24 +204,24 @@ function EZS.AddRankLabel( sb )
 		label.Think = function( s )
 			if not IsValid( ply ) then return end
 			local rank = EZS.GetRank( ply )
-			if not rank then s:SetTextColor( color_white ) return end
+			if not rank then s:SetFGColor( color_white ) return end
 			
 			if not rank.dynamic_col then
-				s:SetTextColor( rank.color )
+				s:SetFGColor( rank.color )
 			else
-				s:SetTextColor( EZS.Dynamic( rank, ply ) )
+				s:SetFGColor( EZS.Dynamic( rank, ply ) )
 			end
 		end
 		sb.nick.Think = function( s )
 			if not IsValid( ply ) then return end
 			local rank = EZS.GetRank( ply )
-			if not rank then s:SetTextColor( color_white ) return end
+			if not rank then s:SetFGColor( color_white ) return end
 			
 			if not rank.dynamic_col then
-				s:SetTextColor( rank.color )
+				s:SetFGColor( rank.color )
 			else
 				if EZS.AllowNamesToHaveDynamicColor then
-					s:SetTextColor( EZS.Dynamic( rank, ply ) )
+					s:SetFGColor( EZS.Dynamic( rank, ply ) )
 				end
 			end
 		end
